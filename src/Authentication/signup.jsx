@@ -1,23 +1,22 @@
 import React, {useState} from 'react'
 import './signup.css'
 import {Link} from 'react-router-dom'
+import {useAuth} from '../Context/AuthContext'
 
 
-function SignUp(props){
+function SignUp(){
 
-    const {
+  const {
+        handleSingUp,
         email,
         setEmail,
         password,
         setPassword,
-        handlelogin,
-        handleSingUp,
-        thereIsAccount,
-        setThereIsAccount,
         emailError,
         passwordError,
         passwordConfirm,
-        setPasswordConfirm} = props
+        setPasswordConfirm} = useAuth()
+
 
     return(
         <section className="signUp">

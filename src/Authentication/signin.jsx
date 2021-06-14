@@ -1,22 +1,19 @@
 import React from 'react';
 import './signin.css';
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
+import {useAuth} from '../Context/AuthContext'
 
-function SignIn(props){
 
-    const {
-        email,
-        setEmail,
-        password,
-        setPassword,
-        handlelogin,
-        handleSingUp,
-        thereIsAccount,
-        setThereIsAccount,
-        emailError,
-        passwordError,
-        passwordConfirm,
-        setPasswordConfirm} = props
+function SignIn(){
+  
+  const {handlelogin,
+         email,
+         setEmail,
+         password,
+         setPassword,
+         emailError,
+         passwordError,
+        } = useAuth()
 
     return(
         <section className="signin">
