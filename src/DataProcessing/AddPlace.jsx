@@ -1,16 +1,24 @@
 import React,{ useState} from 'react';
+import axios from 'axios';
 import credentials from "../APIs/credentials"
 import usePlacesAutocomplete,{ 
     geocodeByAddress,
     getLatLng,
 } from 'react-places-autocomplete'
 import PlacesAutocomplete from 'react-places-autocomplete';
-
+import {useAuth} from '../Context/AuthContext'
 
 function AddPlace() {
 
     const [address, setAddress] = useState(' ')
     const [coordinates, setCoordinates] = useState({lat:null, lng:null})
+    const [timeStay, setTimeStay] = useState()
+    const {user} = useAuth()
+
+    const clearinput = () => {
+        setAddress(' ');
+        setTimeStay(0);
+    }
 
     const handleSelect = async (value) => {
         const result = await geocodeByAddress(value);
@@ -19,8 +27,35 @@ function AddPlace() {
         setCoordinates(latlng)
     }
 
+    const handleSubmit = (event) =>{
+
+        event.preventDefault()
+        
+        const infoload ={
+           username: user.email,
+           placeName: address,
+           placelat: coordinates.lat,
+           placelng: coordinates.lng,
+           placeDuration: timeStay
+        }
+
+        axios({
+            url:'/api/save',
+            method: 'POST',
+            data:infoload
+        }).then(()=>{
+            console.log("Data Upload")
+            clearinput()
+        })
+          .catch(()=>{
+              console.log("Data Error")
+            })
+    }
+
+
 return(
     <div>
+        <h1>Add New Place</h1>
         <PlacesAutocomplete 
             value={address}
             onChange={setAddress}
@@ -48,7 +83,13 @@ return(
                   
         )
         }
+
         </PlacesAutocomplete>
+        <input type="text" 
+                placeholder = "Time in this place"
+                name="ruteInputName"
+                onChange={e=>{setTimeStay(e.target.value)}}/>
+        <button onClick={handleSubmit}> Create Route</button>
         </div>
     )
 }

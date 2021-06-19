@@ -32,14 +32,21 @@ export function AuthProvider({ children }){
         setPasswordConfirm('');
     }
 
+    const handlelogout = async () => {
+        firebase.auth()
+                .signOut()
+                .then(()=>{
+                    window.location.href= '/'
+                })
+    }
 
     const handlelogin = async () => {
         clearErrors();
         firebase
             .auth()
             .signInWithEmailAndPassword(email,password)
-            .then(()=>{
-                console.log("Hola")
+            .then((usuario)=>{
+                setUser(usuario) 
                 window.location.href= '/main'
             })
             .catch( error => {
@@ -97,6 +104,7 @@ export function AuthProvider({ children }){
     },[])
 
     const value = {
+        handlelogout,
         handleSingUp,
         handlelogin,
         email,
