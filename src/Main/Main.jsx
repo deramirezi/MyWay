@@ -2,21 +2,22 @@ import React, {useState} from 'react';
 import WrappledMap from '../Maps/Map'
 import credentials from "../APIs/credentials"
 import Navegation from './Navigation'
-import AddPlace from "../DataProcessing/AddPlace"
-import DistancePlaces from "../DataProcessing/DistancePlaces"
+import DataBase from '../AWS/DataBase'
 import './Main.css'
 
 function Main(){
      
     return(
-    <>
-      <AddPlace/>
+    <>  
+      <Navegation/> 
+      <DataBase/>
     </> 
     )
 }
 
 export default Main
 
+// 
 
 /*
 <div className="WrappledMap">
@@ -25,5 +26,5 @@ export default Main
           containerElement={<div style={{height: "100%"}}/>}
           mapElement={<div style={{height: "100%"}}/>}
        />
-    </div>
+</div>
 */

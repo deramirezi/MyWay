@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Authentication from './Authentication/Authentication'
 import {useFirebaseApp} from 'reactfire'
+import Main from './Main/Main'
 import {AuthProvider} from "./Context/AuthContext"
 
 function App() {
@@ -8,10 +9,14 @@ function App() {
   return (
     <AuthProvider>
     <div className="App">
-      <Authentication/>
+      <Authentication/>  
     </div>
     </AuthProvider>
   );
 }
 
 export default App;
+
+/*
+<Authentication/>
+*/

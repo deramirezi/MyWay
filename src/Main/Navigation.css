@@ -3,14 +3,32 @@
 
 .container{
   position: absolute;
-  top: 0px;
+  width: 500px;
+  top: 80px;
   left: 0px;
   padding: 0px;
   margin: 0px;
 }
 
+.Boton{
+  position: relative;
+  top: 500px;
+}
+
+.Logo{
+  position: absolute;
+  top: 10px;
+  left:0px;
+  background-image: url(./LOGOS.png);
+  background-size: cover;
+  display: flex;
+  flex-flow: row;
+  width: 15%;
+  height: 7%;
+}
+
 .card{
-  width: 250px;
+  width: 200px;
   height: 100vh;
   background: radial-gradient(
       ellipse at left bottom,
@@ -32,6 +50,7 @@
 }
 
 h3{
+  font-size: 11px;
   color: #FFFFFF;
   font-family: 'Baloo Tammudu 2', cursive;
   margin-left: 1rem;

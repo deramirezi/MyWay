@@ -16,7 +16,10 @@ function SignIn(){
         } = useAuth()
 
     return(
+    <>
+    
         <section className="signin">
+        <div className="Logos"></div>
             <div className="signinContainer">
                 <label>Username</label>
                 <input 
@@ -48,7 +51,8 @@ function SignIn(){
                     
                 </div>
             </div>
-        </section> 
+        </section>
+        </> 
     )
 }
 

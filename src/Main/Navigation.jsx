@@ -11,23 +11,18 @@ const{handlelogout,user} = useAuth()
 
 return(
     <>
+    <div className="Logo"></div>
     <aside className="container">
 
        <div className="card">
 
        <header className="header">
-            <h3>Email: {user.email}</h3>
+            <h3>{user.email}</h3>
         </header>
 
-        <nav className="body">
-            <ul>
-               <li> ADD ROUTE</li>
-               <li> MAP</li>
-            </ul>
-        </nav>
 
         <section>
-            <button onClick={handlelogout}>Log Out</button>
+            <button  className="Boton" onClick={handlelogout}>Log Out</button>
         </section>
         </div>
     </aside>

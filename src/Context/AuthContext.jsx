@@ -12,6 +12,7 @@ export function useAuth(){
 export function AuthProvider({ children }){
 
     const [email, setEmail] = useState(' ');
+    const [place, setPlace] = useState([]);
     const [password, setPassword] = useState('')
     const [user, setUser] = useState('')
     const [emailError, setEmailError] = useState('')
@@ -107,6 +108,8 @@ export function AuthProvider({ children }){
         handlelogout,
         handleSingUp,
         handlelogin,
+        place,
+        setPlace,
         email,
         setEmail,
         password,

@@ -1,0 +1,96 @@
+.WrappledMap{
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.GeoData {
+    position: absolute;
+    top: 20px;
+    left: 260px;
+    width: 330px;
+    min-height: 100px;
+    
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1px 1px;
+  }
+
+  Table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 350px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  Table * {
+    position: relative;
+  }
+  Table td, table th {
+    padding-left: 8px;
+  }
+
+  Table thead tr {
+    height: 60px;
+    background: #36304a;
+  }
+
+  Table tbody tr {
+    height: 50px;
+  }
+
+  Table tbody tr:last-child {
+    border: 0;
+  }
+
+  Table td, Table th {
+    text-align: left;
+  }
+  Table td.l, Table th.l {
+    text-align: right;
+  }
+  Table td.c, Table th.c {
+    text-align: center;
+  }
+  Table td.r, Table th.r {
+    text-align: center;
+  }
+
+  .table100-head th{
+    font-family: OpenSans-Regular;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: unset;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+  
+  tbody tr {
+    font-family: OpenSans-Regular;
+    font-size: 15px;
+    color: #808080;
+    line-height: 1.2;
+    font-weight: unset;
+  }
+  
+  tbody tr:hover {
+    color: #555555;
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
+  
