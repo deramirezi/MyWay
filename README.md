@@ -1,2 +1,2 @@
-# MyWay
+# EncuentreME
 Project for Globant Bootcamp
